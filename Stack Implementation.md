@@ -73,7 +73,14 @@ private:
 
 public:
     // Constructor: Initializes top to -1 (empty stack)
-    Stack() : top(-1) {}
+    Stack() : top(-1) {}         // or we can typet with the standerd formla
+    
+    /*
+    Stack (){
+    top = -1 ;
+    }
+    
+    */
 
     // Function to push an element onto the stack
     void push(int Element) {
