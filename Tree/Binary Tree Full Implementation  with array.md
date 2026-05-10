@@ -9,6 +9,7 @@ We navigate the tree using mathematical relationships between indices.
 
 ```cpp
 #include <iostream>
+#include <algorithm> 
 using namespace std;
 
 // Global array for the tree
@@ -20,6 +21,28 @@ void initTree() {
     for (int i = 0; i < maxSize; i++) {
         tree[i] = -1;
     }
+}
+
+// 
+void rootnode(int key) {
+    if (tree[0] != -1)
+        cout << "Tree already has a root\n";
+    else
+        tree[0] = key;
+}
+
+void leftchild(int key, int parent) {
+    if (tree[parent] == -1)
+        cout << "Can't set child at " << (parent * 2) + 1 << ", no parent found\n";
+    else
+        tree[(parent * 2) + 1] = key;
+}
+
+void rightchild(int key, int parent) {
+    if (tree[parent] == -1)
+        cout << "Can't set child at " << (parent * 2) + 2 << ", no parent found\n";
+    else
+        tree[(parent * 2) + 2] = key;
 }
 
 // 2. Traversal Operations
